@@ -10,6 +10,7 @@
 		0586F2CB862E8DD993E6AFAA /* Pods_Secure_Note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174DD6DF3417DB63CC04F527 /* Pods_Secure_Note.framework */; };
 		850C64221F772BB500ED1C12 /* DatabaseDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C64211F772BB500ED1C12 /* DatabaseDocument.swift */; };
 		850C64241F772BEE00ED1C12 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C64231F772BEE00ED1C12 /* DocumentType.swift */; };
+		850C64261F785E0600ED1C12 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C64251F785E0600ED1C12 /* Note.swift */; };
 		8543A53C1F770CFF00DB747E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543A53B1F770CFF00DB747E /* DataProvider.swift */; };
 		8562A9E61F770AB200A1A907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8562A9E51F770AB200A1A907 /* AppDelegate.swift */; };
 		8562A9E81F770AB200A1A907 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8562A9E71F770AB200A1A907 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		695C631C0BF4F1ED2FF1A502 /* Pods_Secure_NoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Secure_NoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		850C64211F772BB500ED1C12 /* DatabaseDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseDocument.swift; sourceTree = "<group>"; };
 		850C64231F772BEE00ED1C12 /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
+		850C64251F785E0600ED1C12 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8543A53B1F770CFF00DB747E /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8543A53D1F770D4B00DB747E /* secure-note-objc-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "secure-note-objc-bridging-header.h"; sourceTree = "<group>"; };
 		8562A9E21F770AB200A1A907 /* Secure Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Secure Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				8562A9EE1F770AB200A1A907 /* LaunchScreen.storyboard */,
 				8562A9F11F770AB200A1A907 /* Info.plist */,
 				8543A53D1F770D4B00DB747E /* secure-note-objc-bridging-header.h */,
+				850C64251F785E0600ED1C12 /* Note.swift */,
 			);
 			path = "Secure Note";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				850C64241F772BEE00ED1C12 /* DocumentType.swift in Sources */,
 				8562A9E81F770AB200A1A907 /* ViewController.swift in Sources */,
 				8562A9E61F770AB200A1A907 /* AppDelegate.swift in Sources */,
+				850C64261F785E0600ED1C12 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

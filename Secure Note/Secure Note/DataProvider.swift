@@ -23,7 +23,11 @@ extension DataProvider {
     static func initView(forDocumentType type: DocumentType, database: CBLDatabase, sortKey: String) -> CBLView {
         let view = database.viewNamed(type.rawValue)
         view.documentType = type.rawValue
-        let mapBlock: CBLMapBlock = { doc, emit in emit(doc[sortKey], doc) }
+        let mapBlock: CBLMapBlock = { doc, emit in
+            if let key = doc[sortKey] as? String {
+                emit(key, doc)
+            }
+        }
         let reduceBlock: CBLReduceBlock = { keys, values, rereduce in return values.count }
         view.setMapBlock(mapBlock, reduce: reduceBlock, version: "0")
         return view
@@ -56,7 +60,7 @@ extension DataProvider {
                 return
             }
             let view = db.existingViewNamed(documentType.rawValue) ?? initView(forDocumentType: documentType,
-                                                                               database: db, sortKey: "")
+                                                                               database: db, sortKey: T.sortKey)
             
             // Create the queryy
             let query = view.createQuery()
