@@ -10,13 +10,19 @@ import Foundation
 import Gloss
 
 protocol DatabaseDocument {
+    
     static var documentType: DocumentType? { get }
     static var sortKey: String { get }
+    
     var id: String { get }
+    
     init?(json: [String: Any])
+    
     func toJson() -> [String: Any]?
 }
 
+
+// MARK: Glossy Defaults
 
 extension DatabaseDocument where Self: Glossy {
     
@@ -28,3 +34,18 @@ extension DatabaseDocument where Self: Glossy {
         return self.toJSON()
     }
 }
+
+
+// MARK: Data Provider Functions
+
+extension DatabaseDocument {
+
+    static func get(withId id: String, completionHandler: @escaping (Self?) -> ()) {
+        DataProvider.getDocument(withId: id, callback: completionHandler)
+    }
+    
+    static func getBatch(startAt index: Int, amount: Int, completionHandler: @escaping ([Self]) -> ()) {
+        DataProvider.getBatch(startAt: index, amount: amount, callback: completionHandler)
+    }
+}
+
