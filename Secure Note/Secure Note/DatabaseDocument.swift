@@ -47,5 +47,13 @@ extension DatabaseDocument {
     static func getBatch(startAt index: Int, amount: Int, completionHandler: @escaping ([Self]) -> ()) {
         DataProvider.getBatch(startAt: index, amount: amount, callback: completionHandler)
     }
+    
+    static func save(completionHandler: @escaping () -> ()) {
+        guard let document = self as? Self else {
+            // TODO: Log unusual error?
+            return
+        }
+        DataProvider.save(document: document, completionHandler: completionHandler)
+    }
 }
 

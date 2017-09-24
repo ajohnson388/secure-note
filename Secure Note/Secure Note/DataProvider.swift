@@ -102,6 +102,33 @@ extension DataProvider {
 
 extension DataProvider {
 
+    static func save<T>(document: T, completionHandler: @escaping () -> ()) where T: DatabaseDocument {
+        CBLManager.sharedInstance().backgroundTellDatabaseNamed(dbName) { db in
+            
+            defer {
+                DispatchQueue.main.async(execute: completionHandler)
+            }
+            
+            // Get the new json
+            guard let json = document.toJson() else {
+                // TODO: Log error
+                return
+            }
+        
+            // Get the original document
+            guard let document = db.document(withID: document.id) else {
+                // TODO: Log error
+                return
+            }
+            
+            // Update the document with the new json
+            do {
+                try document.putProperties(json)
+            } catch {
+                // TODO: Log error
+            }
+        }
+    }
 }
 
 
